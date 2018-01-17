@@ -12,41 +12,29 @@
             var ws;
             $(document).ready(function () {
 
-                ws = new WebSocket("ws://localhost:8080");
+                ws = new WebSocket("ws://192.168.1.4:8080");
                 var uid,qrcode;
                 ws.onopen = function (e) {
                     console.log('Connection to server opened',ws);
                 }
                 ws.onmessage = function(event) {
-                    console.log('Client received a message', event);
-                    uid = event.data;
-                    console.log(uid);
 
-                    var reader = new window.FileReader();
-                    reader.readAsDataURL(uid);
-                    reader.onloadend = function() {
-                        var base64data = reader.result;
-//                        base64data=base64data.replace("data:;", "data:application/font-woff;Content-Disposition: attachment;filename=foobar.png;");
-                        console.log(base64data);
-                    }
+                    var data = JSON.parse(event.data);
 
-
-
-
-
-
-
-                    if(uid.length === 1){
-                        url = "https://www.baidu.com" + uid[0];
+                    if(data['userID']){
+                        uid = data['userID'];
+                        url = "http://192.168.1.4:8020/websocket-demo/backend.html?=" + uid;
                         console.log(url);
                         qrcode = new QRCode(document.getElementById("qrcode"), {
-                            text: "https://www.baidu.com",
+                            text: url,
                             width: 128,
                             height: 128,
                             colorDark : "#000000",
                             colorLight : "#ffffff",
                             correctLevel : QRCode.CorrectLevel.H
                         });
+                    }else if(data['logined']){
+                        console.log('success')
                     }
                 };
                 ws.onclose = function (e) {

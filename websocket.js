@@ -9,24 +9,31 @@ wss.on('connection', function(ws) {
     clients.push(ws);
 
     var userID = ws._ultron.id;
-    var data = [].push(userID);
-    const array = new Float32Array(5);
+    var data = {'userID':userID}
 
-    for (var i = 0; i < array.length; ++i) {
-        array[i] = i / 2;
-    }
-    ws.send(array);
+    ws.send(JSON.stringify(data));
 
     ws.on('message', function(message) {
         // 广播消息
-        var temp = data.slice();
-        temp.push(message);
-        clients.forEach(function(ws1){
+        var message = JSON.parse(message)
+        if(message['userID']){
+            var temp = message['userID'];
+            clients.forEach(function(ws1){
 
-            if(ws1 !== ws) {
-                ws1.send(temp);
-            }
-        })
+                if(ws1._ultron.id == temp) {
+                    console.log('success');
+                    ws1.send(JSON.stringify({'logined':true}));
+                }
+            })
+        }else{
+            var temp = {'mes':message};
+            clients.forEach(function(ws1){
+
+                if(ws1 !== ws) {
+                    ws1.send(JSON.stringify(temp));
+                }
+            })
+        }
     });
 
     ws.on('close', function() {
