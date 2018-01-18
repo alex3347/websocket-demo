@@ -11,7 +11,7 @@
         var url = location.href;
         var uid = url.slice(-1);
         $(document).ready(function(){
-            ws = new WebSocket("ws://192.168.1.4:8080");
+            ws = new WebSocket("ws://192.168.1.42:8080");
 
             ws.onopen = function (e) {
                 console.log('Connection to server opened');

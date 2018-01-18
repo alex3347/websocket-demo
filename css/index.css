@@ -1,0 +1,208 @@
+@charset "UTF-8";
+.container {
+  width: 1920px;
+  font-family: '微软雅黑';
+  overflow: hidden; }
+  .container .leftVideo {
+    float: left;
+    width: 1080px;
+    height: 1080px; }
+    .container .leftVideo video {
+      width: 1080px;
+      height: 1080px;
+      object-fit: fill; }
+  .container .rightContentBefore {
+    float: right;
+    width: 840px;
+    height: 1060px; }
+    .container .rightContentBefore .topContainer {
+      width: 100%; }
+      .container .rightContentBefore .topContainer .top {
+        width: 100%;
+        height: 85px;
+        background-color: #3bcd80;
+        padding-top: 21px; }
+        .container .rightContentBefore .topContainer .top .logo {
+          float: left;
+          margin-left: 50px; }
+          .container .rightContentBefore .topContainer .top .logo img {
+            display: block;
+            width: 235px;
+            height: 82px; }
+        .container .rightContentBefore .topContainer .top .numberContainer {
+          float: right;
+          width: 76px;
+          height: 76px;
+          border-radius: 50%;
+          background-color: #fff;
+          color: #3bcd80;
+          text-align: center;
+          margin-right: 40px; }
+          .container .rightContentBefore .topContainer .top .numberContainer .number {
+            display: inline-block;
+            font-size: 50px;
+            margin-top: 4px; }
+          .container .rightContentBefore .topContainer .top .numberContainer .detail {
+            display: inline-block;
+            width: 18px;
+            font-size: 18px;
+            line-height: 20px; }
+      .container .rightContentBefore .topContainer .down {
+        width: 100%;
+        height: 52px;
+        background: url("../img/topBac.png") repeat-x 0 0; }
+    .container .rightContentBefore .middleContainer {
+      width: 100%;
+      margin: 48px auto 0; }
+      .container .rightContentBefore .middleContainer .titleContainer {
+        width: 100%; }
+        .container .rightContentBefore .middleContainer .titleContainer .upContainer {
+          margin: 0 auto;
+          text-align: center; }
+          .container .rightContentBefore .middleContainer .titleContainer .upContainer img {
+            display: inline-block;
+            width: 80px;
+            height: 17px; }
+          .container .rightContentBefore .middleContainer .titleContainer .upContainer .content {
+            display: inline-block;
+            font-size: 36px;
+            color: #3bcd80;
+            margin: 0 30px; }
+        .container .rightContentBefore .middleContainer .titleContainer .downContainer {
+          width: 100%;
+          text-align: center;
+          margin-top: 20px; }
+          .container .rightContentBefore .middleContainer .titleContainer .downContainer img {
+            display: inline-block;
+            width: 30px;
+            height: 20px; }
+      .container .rightContentBefore .middleContainer .itemContainer {
+        width: 740px;
+        margin: 30px auto 0;
+        overflow: hidden; }
+        .container .rightContentBefore .middleContainer .itemContainer .item {
+          width: 370px;
+          float: left;
+          margin-bottom: 30px; }
+          .container .rightContentBefore .middleContainer .itemContainer .item img {
+            display: block;
+            width: 84px;
+            height: 85px;
+            margin: 0 auto; }
+          .container .rightContentBefore .middleContainer .itemContainer .item .itemNumber {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 3px solid #3bcd80;
+            font-size: 20px;
+            text-align: center;
+            line-height: 34px;
+            margin: 20px auto;
+            color: #3bcd80; }
+          .container .rightContentBefore .middleContainer .itemContainer .item .itemContent {
+            font-size: 30px;
+            color: #3bcd80;
+            text-align: center; }
+    .container .rightContentBefore .downContainer {
+      width: 100%; }
+      .container .rightContentBefore .downContainer img {
+        margin: 0 auto; }
+      .container .rightContentBefore .downContainer .describe {
+        font-size: 30px;
+        color: #444;
+        text-align: center;
+        margin-top: 16px; }
+  .container .rightContentAfter {
+    float: right;
+    width: 840px;
+    height: 1060px; }
+    .container .rightContentAfter .topContainer {
+      width: 100%; }
+      .container .rightContentAfter .topContainer .top {
+        width: 100%;
+        height: 85px;
+        background-color: #ff6767;
+        padding-top: 21px; }
+        .container .rightContentAfter .topContainer .top .logo {
+          float: left;
+          margin-left: 50px; }
+          .container .rightContentAfter .topContainer .top .logo img {
+            display: block;
+            width: 235px;
+            height: 82px; }
+        .container .rightContentAfter .topContainer .top .numberContainer {
+          float: right;
+          width: 76px;
+          height: 76px;
+          border-radius: 50%;
+          background-color: #fff;
+          color: #ff6767;
+          text-align: center;
+          margin-right: 40px; }
+          .container .rightContentAfter .topContainer .top .numberContainer .number {
+            display: inline-block;
+            font-size: 50px;
+            margin-top: 4px; }
+          .container .rightContentAfter .topContainer .top .numberContainer .detail {
+            display: inline-block;
+            width: 18px;
+            font-size: 18px;
+            line-height: 20px; }
+      .container .rightContentAfter .topContainer .down {
+        width: 100%;
+        height: 52px;
+        background: url("../img/topBacRed.png") repeat-x 0 0; }
+    .container .rightContentAfter .middleContainer {
+      width: 100%;
+      margin: 60px auto 0; }
+      .container .rightContentAfter .middleContainer .title {
+        width: 380px;
+        height: 76px;
+        border-top: 1px solid #ff6767;
+        border-bottom: 1px solid #ff6767;
+        text-align: center;
+        color: #ff6767;
+        font-size: 36px;
+        line-height: 76px;
+        margin: 0 auto; }
+        .container .rightContentAfter .middleContainer .title i {
+          font-style: normal;
+          display: inline-block; }
+      .container .rightContentAfter .middleContainer .item {
+        width: 100%;
+        margin: 60px 0 98px; }
+        .container .rightContentAfter .middleContainer .item .avatar {
+          display: block;
+          width: 210px;
+          height: 210px;
+          border-radius: 50%;
+          margin: 0 auto; }
+        .container .rightContentAfter .middleContainer .item .itemName {
+          font-size: 36px;
+          color: #333;
+          margin: 25px 0 18px;
+          text-align: center; }
+        .container .rightContentAfter .middleContainer .item .itemContent {
+          text-align: center; }
+          .container .rightContentAfter .middleContainer .item .itemContent img {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            vertical-align: top; }
+          .container .rightContentAfter .middleContainer .item .itemContent i {
+            display: inline-block;
+            font-style: normal;
+            margin-left: 20px;
+            font-size: 30px;
+            color: #333;
+            line-height: 36px;
+            vertical-align: top; }
+    .container .rightContentAfter .downContainer {
+      width: 100%; }
+      .container .rightContentAfter .downContainer img {
+        margin: 0 auto; }
+      .container .rightContentAfter .downContainer .describe {
+        font-size: 30px;
+        color: #444;
+        text-align: center;
+        margin-top: 16px; }

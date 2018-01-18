@@ -1,0 +1,256 @@
+@charset "utf-8";
+.container{
+  width:1920px;
+  font-family: '微软雅黑';
+  overflow: hidden;
+  .leftVideo{
+    float: left;
+    width:1080px;
+    height:1080px;
+    video{
+      width:1080px;
+      height:1080px;
+      object-fit:fill;
+    }
+  }
+  .rightContentBefore{
+    float: right;
+    width:840px;
+    height:1060px;
+    .topContainer{
+      width:100%;
+      .top{
+        width:100%;
+        height:85px;
+        background-color: #3bcd80;
+        padding-top: 21px;
+        .logo{
+          float: left;
+          margin-left: 50px;
+          img{
+            display: block;
+            width:235px;
+            height:82px;
+          }
+        }
+        .numberContainer{
+          float: right;
+          width:76px;
+          height:76px;
+          border-radius: 50%;
+          background-color: #fff;
+          color: #3bcd80;
+          text-align: center;
+          margin-right: 40px;
+          .number{
+            display: inline-block;
+            font-size: 50px;
+            margin-top: 4px;
+          }
+          .detail{
+            display: inline-block;
+            width:18px;
+            font-size: 18px;
+            line-height: 20px;
+          }
+        }
+      }
+      .down{
+        width:100%;
+        height:52px;
+        background: url("../img/topBac.png") repeat-x 0 0;
+      }
+    }
+    .middleContainer{
+      width:100%;
+      margin:48px auto 0;
+      .titleContainer{
+        width:100%;
+        .upContainer{
+          margin:0 auto;
+          text-align: center;
+          img{
+            display: inline-block;
+            width:80px;
+            height:17px;
+          }
+          .content{
+            display: inline-block;
+            font-size: 36px;
+            color: #3bcd80;
+            margin:0 30px;
+          }
+        }
+        .downContainer{
+          width:100%;
+          text-align: center;
+          margin-top: 20px;
+          img{
+            display: inline-block;
+            width:30px;
+            height:20px;
+          }
+        }
+      }
+      .itemContainer{
+        width:740px;
+        margin:30px auto 0;
+        overflow: hidden;
+        .item{
+          width:370px;
+          float: left;
+          margin-bottom: 30px;
+          img{
+            display: block;
+            width:84px;
+            height:85px;
+            margin:0 auto;
+          }
+          .itemNumber{
+            width:34px;
+            height:34px;
+            border-radius: 50%;
+            border:3px solid #3bcd80;
+            font-size: 20px;
+            text-align: center;
+            line-height: 34px;
+            margin:20px auto;
+            color: #3bcd80;
+          }
+          .itemContent{
+            font-size: 30px;
+            color: #3bcd80;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .downContainer{
+      width:100%;
+      img{
+        margin:0 auto;
+      }
+      .describe{
+        font-size: 30px;
+        color: #444;
+        text-align: center;
+        margin-top: 16px;
+      }
+    }
+  }
+  .rightContentAfter{
+    float: right;
+    width:840px;
+    height:1060px;
+    .topContainer{
+      width:100%;
+      .top{
+        width:100%;
+        height:85px;
+        background-color: #ff6767;
+        padding-top: 21px;
+        .logo{
+          float: left;
+          margin-left: 50px;
+          img{
+            display: block;
+            width:235px;
+            height:82px;
+          }
+        }
+        .numberContainer{
+          float: right;
+          width:76px;
+          height:76px;
+          border-radius: 50%;
+          background-color: #fff;
+          color: #ff6767;
+          text-align: center;
+          margin-right: 40px;
+          .number{
+            display: inline-block;
+            font-size: 50px;
+            margin-top: 4px;
+          }
+          .detail{
+            display: inline-block;
+            width:18px;
+            font-size: 18px;
+            line-height: 20px;
+          }
+        }
+      }
+      .down{
+        width:100%;
+        height:52px;
+        background: url("../img/topBacRed.png") repeat-x 0 0;
+      }
+    }
+    .middleContainer{
+      width:100%;
+      margin:60px auto 0;
+      .title{
+        width:380px;
+        height:76px;
+        border-top: 1px solid #ff6767;
+        border-bottom: 1px solid #ff6767;
+        text-align: center;
+        color: #ff6767;
+        font-size: 36px;
+        line-height: 76px;
+        margin:0 auto;
+        i{
+          font-style: normal;
+          display: inline-block;
+        }
+      }
+      .item{
+        width:100%;
+        margin:60px 0 98px;
+        .avatar{
+          display: block;
+          width:210px;
+          height:210px;
+          border-radius: 50%;
+          margin:0 auto;
+        }
+        .itemName{
+          font-size: 36px;
+          color: #333;
+          margin:25px 0 18px;
+          text-align: center;
+        }
+        .itemContent{
+          text-align: center;
+          img{
+            display: inline-block;
+            width:36px;
+            height:36px;
+            vertical-align: top;
+          }
+          i{
+            display: inline-block;
+            font-style: normal;
+            margin-left: 20px;
+            font-size: 30px;
+            color: #333;
+            line-height: 36px;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+    .downContainer{
+      width:100%;
+      img{
+        margin:0 auto;
+      }
+      .describe{
+        font-size: 30px;
+        color: #444;
+        text-align: center;
+        margin-top: 16px;
+      }
+    }
+  }
+}

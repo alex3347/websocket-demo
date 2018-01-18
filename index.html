@@ -1,18 +1,106 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/index.css">
         <script src="jquery-3.2.1.min.js"></script>
         <script src="qrcode.min.js"></script>
     </head>
     <body>
-        <input type="text" id="text">
-        <input type="button" onclick="sendMessage()" value="online">
-        <div id="qrcode"></div>
+        <div class="container">
+            <div class="leftVideo">
+                <video controls="controls" autoplay="autoplay" loop="loop">
+                    <source src="video/mov.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="rightContentBefore" style="display: block;">
+                <div class="topContainer">
+                    <div class="top">
+                        <div class="logo">
+                            <img src="img/logo.png" alt="">
+                        </div>
+                        <div class="numberContainer">
+                            <div class="number">2</div>
+                            <div class="detail">号机</div>
+                        </div>
+                    </div>
+                    <div class="down"></div>
+                </div>
+                <div class="middleContainer">
+                    <div class="titleContainer">
+                        <div class="upContainer">
+                            <img src="img/titleLeft.png" alt="">
+                            <div class="content">使用流程</div>
+                            <img src="img/titleRight.png" alt="">
+                        </div>
+                        <div class="downContainer">
+                            <img src="img/titleDown.png" alt="">
+                        </div>
+                    </div>
+                    <div class="itemContainer">
+                        <div class="item">
+                            <img src="img/item1.png" alt="">
+                            <div class="itemNumber">1</div>
+                            <div class="itemContent">扫码计费</div>
+                        </div>
+                        <div class="item">
+                            <img src="img/item2.png" alt="">
+                            <div class="itemNumber">2</div>
+                            <div class="itemContent">选择娱乐方式</div>
+                        </div>
+                        <div class="item">
+                            <img src="img/item3.png" alt="">
+                            <div class="itemNumber">3</div>
+                            <div class="itemContent">享受娱乐时刻</div>
+                        </div>
+                        <div class="item">
+                            <img src="img/item4.png" alt="">
+                            <div class="itemNumber">4</div>
+                            <div class="itemContent">上锁结束计费</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="downContainer">
+                    <div id="qrcode"></div>
+                    <div class="describe">【扫码即玩】</div>
+                </div>
+            </div>
+            <div class="rightContentAfter" style="display: none;">
+                <div class="topContainer">
+                    <div class="top">
+                        <div class="logo">
+                            <img src="img/logo.png" alt="">
+                        </div>
+                        <div class="numberContainer">
+                            <div class="number">2</div>
+                            <div class="detail">号机</div>
+                        </div>
+                    </div>
+                    <div class="down"></div>
+                </div>
+                <div class="middleContainer">
+                    <div class="title">当前等待人数：<i>1</i>人</div>
+                    <div class="item">
+                        <img class="avatar" src="img/avatar.png" alt="">
+                        <div class="itemName">昵称</div>
+                        <div class="itemContent">
+                            <img src="img/time.png" alt="">
+                            <i>已使用22分钟</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="downContainer">
+                    <div id="qrcodeGongzhong"></div>
+                    <div class="describe">扫码关注公众号</div>
+                </div>
+            </div>
+        </div>
         <script>
             var ws;
             $(document).ready(function () {
 
-                ws = new WebSocket("ws://192.168.1.4:8080");
+                ws = new WebSocket("ws://192.168.1.42:8080");
                 var uid,qrcode;
                 ws.onopen = function (e) {
                     console.log('Connection to server opened',ws);
@@ -23,18 +111,19 @@
 
                     if(data['userID']){
                         uid = data['userID'];
-                        url = "http://192.168.1.4:8020/websocket-demo/backend.html?=" + uid;
+                        url = "http://192.168.1.42:8020/websocket-20180117/backend.html?=" + uid;
                         console.log(url);
                         qrcode = new QRCode(document.getElementById("qrcode"), {
                             text: url,
-                            width: 128,
-                            height: 128,
+                            width: 200,
+                            height: 200,
                             colorDark : "#000000",
                             colorLight : "#ffffff",
                             correctLevel : QRCode.CorrectLevel.H
                         });
                     }else if(data['logined']){
-                        console.log('success')
+                        $('.rightContentBefore').css({'display':'none'})
+                        $('.rightContentAfter').css({'display':'block'})
                     }
                 };
                 ws.onclose = function (e) {
@@ -45,9 +134,14 @@
                 };
 
             })
-            function sendMessage() {
-                ws.send(document.getElementById('text').value);
-            }
+            new QRCode(document.getElementById("qrcodeGongzhong"), {
+                text: 'www.baidu.com',
+                width: 200,
+                height: 200,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
         </script>
     </body>
 </html>
