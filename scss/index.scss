@@ -1,8 +1,8 @@
 @charset "utf-8";
+::-webkit-scrollbar{width:0px}
 .container{
   width:1920px;
   font-family: '微软雅黑';
-  overflow: hidden;
   .leftVideo{
     float: left;
     width:1080px;
