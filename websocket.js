@@ -9,28 +9,28 @@ wss.on('connection', function(ws) {
     clients.push(ws);
 
     var userID = ws._ultron.id;
-    var data = {'userID':userID}
+    var data = {'userID':userID};
 
     ws.send(JSON.stringify(data));
 
     ws.on('message', function(message) {
         // 广播消息
-        var message = JSON.parse(message)
+        var message = JSON.parse(message);
         if(message['userID']){
             var temp = message['userID'];
-            clients.forEach(function(ws1){
+            clients.forEach(function(wsInClients){
 
-                if(ws1._ultron.id == temp) {
+                if(wsInClients._ultron.id == temp) {
                     console.log('success');
-                    ws1.send(JSON.stringify({'logined':true}));
+                    wsInClients.send(JSON.stringify({'logined':true}));
                 }
             })
         }else{
             var temp = {'mes':message};
-            clients.forEach(function(ws1){
+            clients.forEach(function(wsInClients){
 
-                if(ws1 !== ws) {
-                    ws1.send(JSON.stringify(temp));
+                if(wsInClients !== ws) {
+                    wsInClients.send(JSON.stringify(temp));
                 }
             })
         }
@@ -38,15 +38,15 @@ wss.on('connection', function(ws) {
 
     ws.on('close', function() {
         // 连接关闭时，将其移出连接池
-        clients = clients.filter(function(ws1){
-            return ws1 !== ws
+        clients = clients.filter(function(wsInClients){
+            return wsInClients !== ws
         })
     });
 
     ws.on('error', function() {
         // 连接出错时，将其移出连接池
-        clients = clients.filter(function(ws1){
-            return ws1 !== ws
+        clients = clients.filter(function(wsInClients){
+            return wsInClients !== ws
         })
     });
 });
